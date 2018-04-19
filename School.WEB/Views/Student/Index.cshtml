@@ -1,16 +1,9 @@
-﻿@using School.DAL
-@using School.DAL.Models
-@using School.WEB.Helpers
+﻿@using School.WEB.Helpers
+@using School.WEB.Viewmodels 
+@model StudentIndex 
 
 @{
     ViewData["Title"] = "Index";
-
-    var Students = new List<Student>();
-
-    using (var db = new SchoolContext())
-    {
-        Students = db.Students.ToList();
-    }
 }
 
 <h2>Index</h2>
@@ -26,7 +19,7 @@
                 <th>Full name</th>
                 <th></th>
             </tr>
-            @foreach (var student in Students)
+            @foreach (var student in Model.Students)
             {
                 <tr>
                     <td>@student.Id</td>

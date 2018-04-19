@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "title";
+﻿@using School.WEB.Viewmodels
+@model StudentAdd
+
+@{
+    ViewBag.Title = "Adding a new student";
 }
 
 <br />
@@ -7,11 +10,13 @@
 
 @using (Html.BeginForm("Add", "Student", FormMethod.Post))
 {
-    <label>Enter the students firstname:</label>
-    @Html.TextBox("firstname", new { }, new { @class = "form-control" })
+    @Html.LabelFor(m => m.Firstname)
+    @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Firstname)</p>
     <br />
-    <label>Enter the students lastname:</label>
-    @Html.TextBox("lastname", new { }, new { @class = "form-control" })
+    @Html.LabelFor(m => m.Lastname)
+    @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Lastname)</p>
     <br />
     <button type="submit" class="btn btn-primary">Submit</button>
 }

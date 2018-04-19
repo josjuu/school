@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using School.DAL;
 using School.DAL.Models;
+using School.WEB.Viewmodels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,40 +15,40 @@ namespace School.WEB.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new StudentIndex());
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            return View("Add", new StudentAdd());
         }
 
         [HttpPost]
-        public IActionResult Add(string firstname, string lastname)
+        public IActionResult Add(StudentAdd studentAdd)
         {
-            var student = new Student();
-            student.Firstname = firstname;
-            student.Lastname = lastname;
+            if (!ModelState.IsValid)
+            {
+                return View("Add", studentAdd);
+            }
 
             using (var db = new SchoolContext())
             {
+                var student = new Student
+                {
+                    Firstname = studentAdd.Firstname,
+                    Lastname = studentAdd.Lastname
+                };
+
                 db.Students.Add(student);
                 db.SaveChanges();
             }
 
-            return RedirectToActionPermanent("Index");
+            return RedirectToActionPermanent("Index", "Student");
         }
 
         [HttpGet("[controller]/Edit/{id}")]
         public IActionResult Update(int id)
-        {
-            ViewData["id"] = id;
-            return View();
-        }
-
-        [HttpPost("[controller]/Edit/{id}")]
-        public IActionResult Update(int id, string firstname, string lastname)
         {
             using (var db = new SchoolContext())
             {
@@ -57,9 +58,35 @@ namespace School.WEB.Controllers
                 {
                     return RedirectToActionPermanent("Index");
                 }
+            }
 
-                student.Firstname = firstname;
-                student.Lastname = lastname;
+            return View("Update", new StudentUpdate(id));
+        }
+
+        [HttpPost("[controller]/Edit/{id}")]
+        public IActionResult Update(StudentUpdate studentUpdate)
+        {
+            if (studentUpdate == null)
+            {
+                return RedirectToActionPermanent("Index");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View("Update", studentUpdate);
+            }
+
+            using (var db = new SchoolContext())
+            {
+                var student = db.Students.SingleOrDefault(s => s.Id == studentUpdate.Id);
+
+                if (student == null)
+                {
+                    return RedirectToActionPermanent("Index");
+                }
+
+                student.Firstname = studentUpdate.Firstname;
+                student.Lastname = studentUpdate.Lastname;
 
                 db.Students.Update(student);
                 db.SaveChanges();
@@ -84,7 +111,7 @@ namespace School.WEB.Controllers
                 db.SaveChanges();
             }
 
-            return View("Index");
+            return View("Index", new StudentIndex());
         }
     }
 }

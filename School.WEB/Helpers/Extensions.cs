@@ -12,5 +12,10 @@ namespace School.WEB.Helpers
         {
             return $"{student.Firstname} {student.Lastname}";
         }
+
+        public static string GetFullname(this Teacher teacher)
+        {
+            return $"{teacher.Firstname} {teacher.Lastname}";
+        }
     }
 }

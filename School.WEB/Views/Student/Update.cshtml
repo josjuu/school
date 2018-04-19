@@ -1,32 +1,25 @@
-﻿@using School.DAL
-@using School.DAL.Models
-@using School.WEB.Helpers
+﻿@using School.WEB.Viewmodels
+@model StudentUpdate
 
 @{
-    var student = new Student();
-
-    using (var db = new SchoolContext())
-    {
-        var id = (int)ViewData["id"];
-        student = db.Students.SingleOrDefault(s => s.Id == id);
-    }
-
-    ViewData["Title"] = $"Edit student: {student.GetFullname()}";
+    ViewBag.Title = $"Edit student: {Model.Fullname}";
 }
-
 <br />
-<h1>Editing student named @student.GetFullname()</h1>
+<h1>Editing student named @Model.Fullname</h1>
 
 @using (Html.BeginForm("Update", "Student", FormMethod.Post))
 {
-    <label>The id of the student:</label>
-    @Html.TextBox("id", "", new { @class = "form-control", @readonly = "true" })
+    @Html.LabelFor(m => m.Id)
+    @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "true" })
+    <p>@Html.ValidationMessageFor(m => m.Id)</p>
     <br />
-    <label>Enter the students firstname:</label>
-    @Html.TextBox("firstname", student.Firstname, new { @class = "form-control" })
+    @Html.LabelFor(m => m.Firstname)
+    @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Firstname)</p>
     <br />
-    <label>Enter the students lastname:</label>
-    @Html.TextBox("lastname", student.Lastname, new { @class = "form-control" })
+    @Html.LabelFor(m => m.Lastname)
+    @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Lastname)</p>
     <br />
     <button type="submit" class="btn btn-primary">Submit</button>
 }
