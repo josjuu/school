@@ -1,0 +1,22 @@
+﻿@using School.WEB.Viewmodels
+@model StudentAdd
+
+@{
+    ViewBag.Title = "title";
+}
+
+<br/>
+<h1>Adding a new student</h1>
+
+@using (Html.BeginForm("Add", "Student", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Firstname)
+    @Html.TextBoxFor(m => m.Firstname, new {@class = "form-control"})
+    <p>@Html.ValidationMessageFor(m => m.Firstname)</p>
+    <br/>
+    @Html.LabelFor(m => m.Lastname)
+    @Html.TextBoxFor(m => m.Lastname, new {@class = "form-control"})
+    <p>@Html.ValidationMessageFor(m => m.Lastname)</p>
+    <br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

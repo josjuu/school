@@ -23,7 +23,8 @@ namespace School.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(LocalDb)\\MSSQLLocalDB; Initial Catalog=School; Integrated Security=SSPI;");
+            optionsBuilder.UseSqlServer(
+                "Data Source=(LocalDb)\\MSSQLLocalDB; Initial Catalog=School; Integrated Security=SSPI;"); // TODO Get connection string from the appsettings.
         }
     }
 }
