@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.WEB", "School.WEB\School.WEB.csproj", "{84B12F0A-E635-49DB-B2DA-73418977B1B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.DAL", "School.DAL\School.DAL.csproj", "{9E247B5C-3DCB-41E1-9A02-D4EF555B81B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84B12F0A-E635-49DB-B2DA-73418977B1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B12F0A-E635-49DB-B2DA-73418977B1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B12F0A-E635-49DB-B2DA-73418977B1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B12F0A-E635-49DB-B2DA-73418977B1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E247B5C-3DCB-41E1-9A02-D4EF555B81B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E247B5C-3DCB-41E1-9A02-D4EF555B81B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E247B5C-3DCB-41E1-9A02-D4EF555B81B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E247B5C-3DCB-41E1-9A02-D4EF555B81B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4842F35E-BD76-4A86-8232-C3E0ED548911}
+	EndGlobalSection
+EndGlobal
