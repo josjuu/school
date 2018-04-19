@@ -1,0 +1,42 @@
+﻿@using School.DAL
+@using School.DAL.Models
+@using School.WEB.Helpers
+
+@{
+    ViewData["Title"] = "Index";
+
+    var Students = new List<Student>();
+
+    using (var db = new SchoolContext())
+    {
+        Students = db.Students.ToList();
+    }
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    <br />
+    <div class="col-md-10 col-md-offset-1">
+        @Html.ActionLink("Add student", "Add", "Student", new { }, new { @class = "btn btn-primary pull-right" })
+        <br /><br />
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Full name</th>
+                <th></th>
+            </tr>
+            @foreach (var student in Students)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.GetFullname()</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Update", "Student", new { id = student.Id })
+                        | @Html.ActionLink("Delete", "Delete", "Student", new { id = student.Id }, new { style = "color: red" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

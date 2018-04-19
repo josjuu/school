@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "title";
+}
+
+<br />
+<h1>Adding a new student</h1>
+
+@using (Html.BeginForm("Add", "Student", FormMethod.Post))
+{
+    <label>Enter the students firstname:</label>
+    @Html.TextBox("firstname", new { }, new { @class = "form-control" })
+    <br />
+    <label>Enter the students lastname:</label>
+    @Html.TextBox("lastname", new { }, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

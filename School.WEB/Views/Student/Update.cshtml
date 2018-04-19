@@ -1,0 +1,32 @@
+﻿@using School.DAL
+@using School.DAL.Models
+@using School.WEB.Helpers
+
+@{
+    var student = new Student();
+
+    using (var db = new SchoolContext())
+    {
+        var id = (int)ViewData["id"];
+        student = db.Students.SingleOrDefault(s => s.Id == id);
+    }
+
+    ViewData["Title"] = $"Edit student: {student.GetFullname()}";
+}
+
+<br />
+<h1>Editing student named @student.GetFullname()</h1>
+
+@using (Html.BeginForm("Update", "Student", FormMethod.Post))
+{
+    <label>The id of the student:</label>
+    @Html.TextBox("id", "", new { @class = "form-control", @readonly = "true" })
+    <br />
+    <label>Enter the students firstname:</label>
+    @Html.TextBox("firstname", student.Firstname, new { @class = "form-control" })
+    <br />
+    <label>Enter the students lastname:</label>
+    @Html.TextBox("lastname", student.Lastname, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
