@@ -1,0 +1,25 @@
+﻿@using School.WEB.Viewmodels
+@model SubjectUpdate
+
+@{
+    ViewBag.Title = $"Editing subject: {Model.Name}";
+}
+
+<br />
+<h1>Editing the subject</h1>
+
+@using (Html.BeginForm("Update", "Subject", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+    ;
+
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Name)</p>
+    <br />
+    @Html.LabelFor(m => m.TeacherId)
+    @Html.DropDownListFor(m => m.TeacherId, Model.Teachers, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.TeacherId)</p>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
