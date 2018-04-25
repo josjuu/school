@@ -1,0 +1,13 @@
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.WEB.deps.json
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.WEB.runtimeconfig.json
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.WEB.runtimeconfig.dev.json
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.WEB.dll
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\obj\Debug\netcoreapp2.0\School.WEB.csprojResolveAssemblyReference.cache
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\obj\Debug\netcoreapp2.0\School.WEB.csproj.CoreCompileInputs.cache
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\obj\Debug\netcoreapp2.0\School.WEB.AssemblyInfoInputs.cache
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\obj\Debug\netcoreapp2.0\School.WEB.AssemblyInfo.cs
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.WEB.pdb
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\obj\Debug\netcoreapp2.0\School.WEB.dll
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\obj\Debug\netcoreapp2.0\School.WEB.pdb
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.DAL.dll
+D:\School\Jaargang 2\C#\Tutorial\School\School.WEB\bin\Debug\netcoreapp2.0\School.DAL.pdb

@@ -1,0 +1,25 @@
+﻿@using School.WEB.Viewmodels
+@model StudentUpdate
+
+@{
+    ViewBag.Title = $"Edit student: {Model.Fullname}";
+}
+<br />
+<h1>Editing student named @Model.Fullname</h1>
+
+@using (Html.BeginForm("Update", "Student", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Id)
+    @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "true" })
+    <p>@Html.ValidationMessageFor(m => m.Id)</p>
+    <br />
+    @Html.LabelFor(m => m.Firstname)
+    @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Firstname)</p>
+    <br />
+    @Html.LabelFor(m => m.Lastname)
+    @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
+    <p>@Html.ValidationMessageFor(m => m.Lastname)</p>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

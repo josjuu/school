@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20180419151525_initialize.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="SchoolContext.cs~RFf59f93.TMP" />
   </ItemGroup>
 
